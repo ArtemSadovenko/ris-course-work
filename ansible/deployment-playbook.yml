@@ -35,10 +35,24 @@
       become_user: "{{ ansible_user }}"
       when: git_dir.stat.exists
 
-    - name: Install npm dependencies and build
+    - name: Install npm @vue/cli-service
       ansible.builtin.shell: |
         npm install @vue/cli-service --save-dev
+      args:
+        chdir: "{{ repo_directory }}"
+      environment:
+        NODE_ENV: production
+
+    - name: Install npm dependencies
+      ansible.builtin.shell: |
         npm install --force
+      args:
+        chdir: "{{ repo_directory }}"
+      environment:
+        NODE_ENV: production
+
+    - name: Build
+      ansible.builtin.shell: |
         npm run build
       args:
         chdir: "{{ repo_directory }}"
