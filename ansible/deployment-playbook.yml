@@ -3,8 +3,8 @@
   become: true
   vars:
     repo_url: "git@github.com:ArtemSadovenko/ris-course-work.git"
-    repo_directory: "{{ ansible_env.HOME }}/ris-course-work"
-    build_directory: "{{ ansible_env.HOME }}/ris-course-work/dist"
+    repo_directory: "/home/ubuntu/ris-course-work"
+    build_directory: "/home/ubuntu/ris-course-work/dist"
     nginx_directory: "/var/www/html"
     
   tasks:
