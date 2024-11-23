@@ -54,10 +54,6 @@
       ansible.builtin.copy:
         src: "{{ build_directory }}/"
         dest: "{{ nginx_directory }}"
-        remote_src: yes
-        owner: nginx
-        group: nginx
-        mode: "0755"
 
     - name: Reload nginx
       ansible.builtin.service:
