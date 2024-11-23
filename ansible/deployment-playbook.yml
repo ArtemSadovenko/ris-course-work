@@ -37,8 +37,8 @@
 
     - name: Install npm dependencies and build
       ansible.builtin.shell: |
-        npm install @vue/cli-service --save-dev
-        npm install
+        npm install @vue/cli-service --save-dev --force
+        npm install --force
         npm run build
       args:
         chdir: "{{ repo_directory }}"
