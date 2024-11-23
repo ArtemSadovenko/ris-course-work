@@ -40,7 +40,7 @@
     - name: Install node_modules
       command: npm install
       args:
-        chdir:
+        chdir: "{{ repo_directory }}"
 
     - name: Build
       ansible.builtin.shell: |
