@@ -37,13 +37,10 @@
         name: "@vue/cli"
         global: true
 
-    - name: Install npm dependencies
-      ansible.builtin.shell: |
-        npm install --force
+    - name: Install node_modules
+      command: npm install
       args:
-        chdir: "{{ repo_directory }}"
-      environment:
-        NODE_ENV: production
+        chdir:
 
     - name: Build
       ansible.builtin.shell: |
