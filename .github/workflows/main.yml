@@ -20,8 +20,7 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
           # Path to the playbook
-          playbook: ./ansible/deploy-playbook.yml
-          # Directory where playbook exists
+          playbook: ./ansible/deployment-playbook.yml
           directory: ./
 
           # SSH private key from GitHub Secrets
