@@ -34,7 +34,7 @@
 
     - name: Install npm @vue/cli-service
       ansible.builtin.shell: |
-        npm install @vue/cli-service --save-dev
+        npm install @vue/cli-service
       args:
         chdir: "{{ repo_directory }}"
       environment:
