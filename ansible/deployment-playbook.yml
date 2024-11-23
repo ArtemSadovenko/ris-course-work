@@ -10,9 +10,9 @@
   tasks:
     - name: Add GitHub to known hosts
       ansible.builtin.shell: |
-        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+        ssh-keyscan -H github.com >> /home/ubuntu/.ssh/known_hosts
       args:
-        creates: ~/.ssh/known_hosts
+        creates: /home/ubuntu/.ssh/known_hosts
 
     - name: Ensure repository directory exists
       ansible.builtin.file:
