@@ -34,4 +34,3 @@ jobs:
           # Additional flags
           options: |
             --limit web_servers
-            -vvv 
