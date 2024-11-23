@@ -22,13 +22,18 @@
         group: "{{ ansible_user }}"
         mode: "0755"
 
+    - name: Check if the repository is already cloned
+      ansible.builtin.stat:
+        path: "{{ repo_directory }}/.git"
+      register: git_dir
+
     - name: Pull latest changes from the repository
       ansible.builtin.shell: |
         cd "{{ repo_directory }}" && git pull origin main
       args:
         chdir: "{{ repo_directory }}"
       become_user: "{{ ansible_user }}"
-      when: ansible.builtin.test -d "{{ repo_directory }}/.git"
+      when: git_dir.stat.exists
 
     - name: Clone the repository if it doesn't exist
       ansible.builtin.git:
@@ -36,7 +41,7 @@
         dest: "{{ repo_directory }}"
         version: main
         clone: yes
-      when: ansible.builtin.test -d "{{ repo_directory }}/.git" == False
+      when: not git_dir.stat.exists
 
     - name: Install npm dependencies and build
       ansible.builtin.shell: |
