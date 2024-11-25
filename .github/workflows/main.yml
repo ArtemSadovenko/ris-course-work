@@ -29,7 +29,7 @@ jobs:
           # Inventory with EC2 instance details
           inventory: |
             [web_servers]
-            54.235.237.43 ansible_user=ubuntu ansible_host=54.235.237.43
+            3.95.39.190 ansible_user=ubuntu ansible_host=3.95.39.190
 
           # Additional flags
           options: |
