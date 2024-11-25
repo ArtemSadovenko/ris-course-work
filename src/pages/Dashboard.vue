@@ -102,7 +102,7 @@ export default {
           type: "warning",
           icon: "ti-server",
           title: "Capacity",
-          value: "105GB",
+          value: "Artem Sadovenko",
           footerText: "Updated now",
           footerIcon: "ti-reload",
         },
