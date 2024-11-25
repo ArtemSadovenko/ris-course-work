@@ -18,6 +18,7 @@ export default {};
     transition: transform 0.3s, opacity 0.4s;
   }
   .list-item {
+    background-color: white;
     display: inline-block;
     margin-right: 10px;
   }
